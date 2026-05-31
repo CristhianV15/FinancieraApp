@@ -1,0 +1,25 @@
+@page
+@model FinancieraApp.Web.Pages.DiagnosticoBD.IndexModel
+
+@{
+    ViewData["Title"] = "Diagnóstico BD";
+}
+
+<h1>Diagnóstico de Base de Datos</h1>
+
+@if (Model.ConexionExitosa)
+{
+    <div class="alert alert-success">
+        Conexión exitosa con la base de datos.
+    </div>
+
+    <p>Total de bancos registrados: <strong>@Model.TotalBancos</strong></p>
+}
+else
+{
+    <div class="alert alert-danger">
+        No se pudo conectar con la base de datos.
+    </div>
+
+    <p><strong>Error:</strong> @Model.MensajeError</p>
+}

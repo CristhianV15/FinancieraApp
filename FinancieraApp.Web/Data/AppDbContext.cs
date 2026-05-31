@@ -1,3 +1,4 @@
+using FinancieraApp.Web.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace FinancieraApp.Web.Data;
@@ -8,4 +9,6 @@ public class AppDbContext : DbContext
         : base(options)
     {
     }
+
+    public DbSet<Banco> Bancos => Set<Banco>();
 }
