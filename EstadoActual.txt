@@ -1,0 +1,109 @@
+# Estado Actual del Proyecto
+
+## Estado General
+
+Fase 1 iniciada.
+
+La Fase 0 queda completada con la definición inicial de la base de datos y la confirmación del stack tecnológico principal.
+
+La aplicación base ASP.NET Core Razor Pages fue creada como punto de partida del sistema financiero personal.
+
+## Configuración Principal del Proyecto
+
+Nombre de la solución:
+
+- FinancieraApp
+
+Nombre del proyecto web:
+
+- FinancieraApp.Web
+
+Tipo de proyecto:
+
+- Aplicación web de ASP.NET Core
+- Razor Pages
+
+Framework seleccionado:
+
+- .NET 8.0 LTS
+
+Configuración inicial seleccionada:
+
+- Authentication: Ninguno
+- HTTPS: Activado
+- Compatibilidad con contenedor: Desactivada
+- .NET Aspire: Desactivado
+- Instrucciones de nivel superior: habilitadas mediante el estilo moderno de Program.cs
+- Checkbox “Colocar la solución y el proyecto en el mismo directorio”: desmarcado
+
+La decisión de mantener la solución como `FinancieraApp` y el proyecto web como `FinancieraApp.Web` se tomó para permitir crecimiento futuro sin mezclar responsabilidades. Más adelante podrán agregarse proyectos como `FinancieraApp.Domain`, `FinancieraApp.Application`, `FinancieraApp.Infrastructure` y `FinancieraApp.Tests`, si el crecimiento del sistema lo justifica.
+
+## Repositorio Git
+
+Repositorio remoto del proyecto:
+
+- https://github.com/CristhianV15/FinancieraApp
+
+Rama principal:
+
+- main
+
+Estrategia recomendada:
+
+- Mantener `main` como rama estable.
+- Realizar el primer commit base directamente en `main`.
+- Crear ramas por funcionalidad para los siguientes avances.
+
+Primera rama recomendada después del proyecto base:
+
+- feature/configurar-conexion-sql-server
+
+Commit inicial recomendado:
+
+- feat: crear proyecto base razor pages
+
+## Base de Datos
+
+Base de datos oficial:
+
+- ControlFinancieroDB
+
+Servidor SQL Server local:
+
+- CRISTHIAN\SQLEXPRESS
+
+Archivo oficial del script de base de datos:
+
+- ControlFinancieroDB.txt
+
+El nombre correcto y definitivo de la base de datos es `ControlFinancieroDB`. Cualquier referencia anterior a `ControlFinancierBD` o `ControlFinancieraBD` debe considerarse obsoleta y debe ser corregida en la documentación y configuración del proyecto.
+
+## Archivos de Contexto del Proyecto
+
+Archivos utilizados como referencia de continuidad:
+
+- EstadoActual.txt
+- ControlFinancieroDB.txt
+- EstructuraProyecto.txt
+
+`EstadoActual.txt` representa el estado funcional y técnico vigente del proyecto.
+
+`ControlFinancieroDB.txt` contiene el script SQL actualizado y debe considerarse la fuente oficial de la estructura actual de la base de datos.
+
+`EstructuraProyecto.txt` contiene el árbol del proyecto y debe actualizarse después de cambios importantes en la estructura de carpetas, clases, proyectos o archivos relevantes.
+
+## Estructura Inicial Esperada
+
+La estructura base recomendada es:
+
+```txt
+FinancieraApp/
+├── FinancieraApp.sln
+└── FinancieraApp.Web/
+    ├── Pages/
+    ├── Properties/
+    ├── wwwroot/
+    ├── appsettings.Development.json
+    ├── appsettings.json
+    ├── FinancieraApp.Web.csproj
+    └── Program.cs
