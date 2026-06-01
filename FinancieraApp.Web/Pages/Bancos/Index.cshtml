@@ -1,0 +1,65 @@
+@page
+@model FinancieraApp.Web.Pages.Bancos.IndexModel
+
+@{
+    ViewData["Title"] = "Bancos";
+}
+
+<h1>Bancos</h1>
+
+<p>
+    <a class="btn btn-primary" asp-page="Create">Nuevo banco</a>
+</p>
+
+@if (Model.Bancos.Count == 0)
+{
+    <div class="alert alert-info">
+        No hay bancos registrados.
+    </div>
+}
+else
+{
+    <table class="table table-striped align-middle">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Tipo</th>
+                <th>Estado</th>
+                <th class="text-end">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var banco in Model.Bancos)
+            {
+                <tr>
+                    <td>@banco.Id</td>
+                    <td>@banco.Nombre</td>
+                    <td>
+                        @if (banco.EsSistema)
+                        {
+                            <span class="badge bg-primary">Sistema</span>
+                        }
+                        else
+                        {
+                            <span class="badge bg-secondary">Usuario</span>
+                        }
+                    </td>
+                    <td>
+                        @if (banco.Activo)
+                        {
+                            <span class="badge bg-success">Activo</span>
+                        }
+                        else
+                        {
+                            <span class="badge bg-danger">Inactivo</span>
+                        }
+                    </td>
+                    <td class="text-end">
+                        <a class="btn btn-sm btn-outline-primary" asp-page="Edit" asp-route-id="@banco.Id">Editar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

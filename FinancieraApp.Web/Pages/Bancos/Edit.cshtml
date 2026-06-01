@@ -1,0 +1,42 @@
+@page "{id:int}"
+@model FinancieraApp.Web.Pages.Bancos.EditModel
+
+@{
+    ViewData["Title"] = "Editar banco";
+}
+
+<h1>Editar banco</h1>
+
+@if (!string.IsNullOrWhiteSpace(Model.MensajeError))
+{
+    <div class="alert alert-danger">
+        @Model.MensajeError
+    </div>
+}
+
+<form method="post">
+    <input type="hidden" asp-for="Banco.Id" />
+
+    <div class="mb-3">
+        <label asp-for="Banco.Nombre" class="form-label"></label>
+        <input asp-for="Banco.Nombre" class="form-control" />
+        <span asp-validation-for="Banco.Nombre" class="text-danger"></span>
+    </div>
+
+    <div class="form-check mb-3">
+        <input asp-for="Banco.Activo" class="form-check-input" />
+        <label asp-for="Banco.Activo" class="form-check-label"></label>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Tipo</label>
+        <input class="form-control" value="@(Model.Banco.EsSistema ? "Sistema" : "Usuario")" disabled />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Guardar cambios</button>
+    <a asp-page="Index" class="btn btn-secondary">Cancelar</a>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
